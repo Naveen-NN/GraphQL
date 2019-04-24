@@ -1,6 +1,5 @@
-﻿using GraphQLBookApi.DAO;
-using GraphQL;
-using GraphQL.Types;
+﻿using GraphQL.Types;
+using GraphQLBookApi.DAO;
 using GraphQLBookApi.Repository;
 
 namespace GraphQLBookApi.GraphQL.Types

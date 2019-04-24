@@ -1,8 +1,6 @@
-﻿using System;
+﻿using GraphQLBookApi.DAO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using GraphQLBookApi.DAO;  
 
 namespace GraphQLBookApi.Repository
 {
@@ -57,6 +55,16 @@ namespace GraphQLBookApi.Repository
         {
             book.Id = _books.Count + 1;
             _books.Add(book);
+            return book;
+        }
+
+        public Book DeleteBook(int id)
+        {
+            var book = _books.Where(b => b.Id == id).SingleOrDefault();
+            if( book != null)
+            {
+                _books.Remove(book);
+            }
             return book;
         }
     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GraphQL;
-using GraphQL.Types;  
+﻿using GraphQL.Types;
 
 namespace GraphQLBookApi.GraphQL.Types
 {

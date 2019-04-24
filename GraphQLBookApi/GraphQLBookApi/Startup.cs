@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GraphQL;
+using GraphQL.Server;
+using GraphQL.Server.Ui.Playground;
+using GraphQLBookApi.GraphQL.Schemas;
+using GraphQLBookApi.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using GraphQL;
-using GraphQL.Server;
-using GraphQLBookApi.GraphQL.Schemas;
-using GraphQL.Server.Ui.Playground;
-using GraphQLBookApi.Repository;  
-
-using Microsoft.AspNetCore.Http;
 
 namespace GraphQLBookApi
 {
@@ -40,7 +31,7 @@ namespace GraphQLBookApi
             services.AddScoped<BookSchema>();
             services.AddGraphQL(x =>
             {
-                x.ExposeExceptions = true;
+                x.ExposeExceptions = false;
             })
            .AddGraphTypes(ServiceLifetime.Scoped)
            .AddUserContextBuilder(httpContext => httpContext.User)
@@ -63,8 +54,7 @@ namespace GraphQLBookApi
 
             app.UseHttpsRedirection();
             app.UseGraphQL<BookSchema>();
-            var options = new GraphQLPlaygroundOptions();
-            app.UseGraphQLPlayground(options);
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
             app.UseMvc();
         }
     }

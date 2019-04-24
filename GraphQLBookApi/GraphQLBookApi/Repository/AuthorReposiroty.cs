@@ -1,8 +1,6 @@
-﻿using System;
+﻿using GraphQLBookApi.DAO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using GraphQLBookApi.DAO;  
 
 namespace GraphQLBookApi.Repository
 {

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿
 
 using GraphQL;
 using GraphQL.Types;
+using GraphQLBookApi.GraphQL.Mutations;
 using GraphQLBookApi.GraphQL.Queries;
-using GraphQLBookApi.GraphQL.Mutations;  
 
 namespace GraphQLBookApi.GraphQL.Schemas
 {
